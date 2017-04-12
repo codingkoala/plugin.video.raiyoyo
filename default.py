@@ -21,7 +21,7 @@ def stamp_ep(ep):
     kodiutils.addListItem("[COLOR blue]"+ep["title"]+"[/COLOR]", {'mode':'playRaiyoyo', 'url': ep["url"]}, thumb=ep["thumbs"],videoInfo=ep,isFolder=False)
 
 def root():
-    kodiutils.addListItem("Elenco Video",{'mode':'elenco_video'})
+    kodiutils.addListItem("Programmi",{'mode':'elenco_video'})
     kodiutils.endScript()
 
 def elenco_video_groupList():
