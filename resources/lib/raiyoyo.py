@@ -25,6 +25,10 @@ class Raiyoyo(rutils.RUtils):
             divid = vidcont.find('div')
             self.log("ID : "+divid['id'])
             elements.append({ 'title': name.text.strip().encode('utf-8') , 'id': divid['id']})
+# get YO YO cartoon page - this show is not listed in videos section
+#        soup = self.getSoup("http://www.raiyoyo.rai.it/dl/PortaliRai/Programmi/PublishingBlock-844eb8e1-6772-4ebf-b345-3cddc0e103f0.html?ContentItem-35def7a8-0807-48f0-9216-a42021d26635")
+#        self.log("YOYO PAGE")
+#        self.log(soup)
         return elements
     
     def get_url_punList(self,id):
