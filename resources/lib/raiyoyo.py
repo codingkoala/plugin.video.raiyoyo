@@ -33,11 +33,14 @@ class Raiyoyo(rutils.RUtils):
       mid_part = subpart.find('div', class_="mid")
       name = top_part.find('h3')
       if name and name.text.strip():
-        self.log("TITLE : "+name.text.strip())
-        vidcont = mid_part.find('div', class_='videoContainer')
-        divid = vidcont.find('div')
-        self.log("ID : "+divid['id'])
-        elements.append({ 'title': name.text.strip().encode('utf-8') , 'id': divid['id']})
+        try:
+          self.log("TITLE : "+name.text.strip())
+          vidcont = mid_part.find('div', class_='videoContainer')
+          divid = vidcont.find('div')
+          self.log("ID : "+divid['id'])
+          elements.append({ 'title': name.text.strip().encode('utf-8') , 'id': divid['id']})
+        except:
+          self.log("Error retrieving " + name.text.strip())
     return elements
     
   def get_url_punList(self,id):
